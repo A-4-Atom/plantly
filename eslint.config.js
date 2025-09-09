@@ -12,6 +12,7 @@ module.exports = defineConfig([
     },
     rules: {
       "react-native/no-unused-styles": "error",
+      "prettier/prettier": ["error", { endOfLine: "auto" }],
     },
   },
 ]);
