@@ -15,6 +15,10 @@ export default function RootLayout() {
           animation: "fade",
         }}
       />
+      <Stack.Screen
+        name="new"
+        options={{ presentation: "modal", title: "Add Plant" }}
+      />
     </Stack>
   );
 }
