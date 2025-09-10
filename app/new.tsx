@@ -4,22 +4,25 @@ import { PlantlyImage } from "../components/PlantlyImage";
 import { PlantlyButton } from "../components/PlantlyButton";
 import { useState } from "react";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
+import { usePlantStore } from "../store/plantsStore";
+import { useRouter } from "expo-router";
 
 export default function NewScreen() {
   const [name, setName] = useState<string>("");
   const [days, setDays] = useState<string>("");
+  const addPlant = usePlantStore((state) => state.addPlant);
+  const router = useRouter();
 
   function handlePress() {
     if (!name || !days) {
       return Alert.alert("Validation Error", "Please fill in all fields");
     }
     if (isNaN(Number(days))) {
-      return Alert.alert(
-        "Validation Error",
-        "Please enter a valid number for watering frequency",
-      );
+      return Alert.alert("Validation Error", "Please enter a valid number");
     }
-    console.log({ name, days: Number(days) });
+    // console.log({ name, days: Number(days) });
+    addPlant(name, Number(days));
+    router.navigate("/");
   }
   return (
     <KeyboardAwareScrollView
