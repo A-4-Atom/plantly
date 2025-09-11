@@ -1,8 +1,8 @@
 import { StyleSheet, FlatList } from "react-native";
-import { theme } from "../../theme";
-import { usePlantStore } from "../../store/plantsStore";
-import { PlantlyButton } from "../../components/PlantlyButton";
-import { PlantCard } from "../../components/PlantCard";
+import { theme } from "../../../theme";
+import { usePlantStore } from "../../../store/plantsStore";
+import { PlantlyButton } from "../../../components/PlantlyButton";
+import { PlantCard } from "../../../components/PlantCard";
 import { useRouter } from "expo-router";
 
 export default function App() {
