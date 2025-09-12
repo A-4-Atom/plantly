@@ -55,5 +55,6 @@ const styles = StyleSheet.create({
     fontSize: 20,
     color: theme.colorWhite,
     textAlign: "center",
+    fontFamily: "Caveat_400Regular",
   },
 });
